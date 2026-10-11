@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+header{
+    background-color:#161b22;
+    padding: 20px;
+    border-bottom: 4px solid #00d1d1;
+}
+
+main{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main p{
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+main h1{
+    color: #00d1d1;
+    margin-bottom: 20px;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #00d1d1;
+}
+
+nav a:hover{
+    color: #ff2a85;
+}
+
+.neon-button{
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ff2a85;
+    border: 2px solid #ff2a85;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.neon-button:hover{
+    background-color: #ff2a85;
+    color: #ffffff;
+    box-shadow: 0 0 15px #ff2a85;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+}
+
+.PC{
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.PC h2{
+    color: #00d1d1;
+    margin-bottom: 10px;
+}
+
+.PC img {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #161b22;
+    margin-top: 20px;
+}
+
+th{
+    padding: 10px 20px;
+    border: 1px solid #30363d;
+    background-color: #21262d;
+    color: #00d1d1;
+}
+
+td{
+    padding: 10px 20px;
+    border: 1px solid #30363d;
+}
+
+.shift-left{
+    text-align: left;
+}
+
+.shift-center{
+    text-align: center;
+}
+
+.shift-right{
+    text-align: right;
+}
+
+form{
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 20px;
+    
+}
+
+form input{
+    display: block;
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #0d1117;
+    color: #e6edf3;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin: 0 auto 20px auto;
+}
+
+form input.neon-button {
+    display: block;
+    margin: 0 auto;
+}
