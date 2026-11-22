@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Музей ретро-компьютеров | Экскурсия</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="page">
+        <header class="header">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="exhibits.html" class="nav__link">Экспонаты</a></li>
+                    <li class="nav__item"><a href="specs.html" class="nav__link">Характеристики</a></li>
+                    <li class="nav__item"><a href="visit.html" class="nav__link nav__link_active">Экскурсия</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <h1 class="main__title">
+                Запись на экскурсию
+            </h1>
+            <p class="main__text">
+                Заполните заявку, чтобы посетить выставку ретро-компьютеров.
+            </p>
+            <form id="visit-form" class="visit-form" method="post" autocomplete="off" action="">
+                <input id="visitor-name" class="visit-form__input" type="text" name="login" placeholder="Фамилия Имя">
+                <input id="visitor-email" class="visit-form__input" type="email" name="email" placeholder="Email">
+                <input id="visit-date" class="visit-form__input" type="date" name="visit_date">
+                <input type="submit" value="Забронировать дату" class="visit-form__submit button button_neon">
+            </form>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">
+                &copy; Беляев А.В. 6404-010302D
+            </p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
