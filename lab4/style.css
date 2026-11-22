@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-background: #0d1117;
+    --block-background: #161b22;
+    --table-header-background: #21262d;
+    --border-color: #30363d;
+    --text-color: #e6edf3;
+    --footer-text: #8b949e;
+    --neon-cyan: #00d1d1;
+    --neon-pink: #ff2a85;
+    --white-color: #ffffff;
+    --main-font: "Lucida Console", "Courier New", monospace;
+}
+
+.page {
+    background-color: var(--main-background);
+    color: var(--text-color);
+    font-family: var(--main-font);
+}
+
+.page_flex {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: var(--block-background);
+    padding: 20px;
+    border-bottom: 4px solid var(--neon-cyan);
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--neon-cyan);
+}
+
+.nav__link:hover,
+.nav__link_active {
+    color: var(--neon-pink);
+}
+
+.main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page_flex .main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.main_wide {
+    max-width: 1450px;
+}
+
+.main__title {
+    color: var(--neon-cyan);
+    margin-bottom: 20px;
+}
+
+.main__text {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: var(--main-font);
+    cursor: pointer;
+}
+
+.button_neon {
+    color: var(--neon-pink);
+    border: 2px solid var(--neon-pink);
+    background-color: transparent;
+}
+
+.button_neon:hover {
+    background-color: var(--neon-pink);
+    color: var(--white-color);
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.button_full {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--footer-text);
+}
+
+.welcome {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.welcome__text {
+    flex: 2;
+}
+
+@keyframes neonBorder {
+    0% {
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 15px var(--neon-cyan);
+    }
+    100% {
+        border-color: var(--neon-pink);
+        box-shadow: 0 0 15px var(--neon-pink);
+    }
+}
+
+.terminal {
+    flex: 1;
+    background-color: var(--main-background);
+    border: 2px solid var(--neon-cyan);
+    border-radius: 8px;
+    box-shadow: 0 0 15px var(--neon-cyan);
+    animation: neonBorder 3s ease-in-out infinite alternate;
+}
+
+.terminal__header {
+    background-color: var(--table-header-background);
+    color: var(--neon-cyan);
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--neon-cyan);
+    font-weight: bold;
+}
+
+.terminal__body {
+    padding: 20px;
+}
+
+.terminal__line {
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.terminal__status {
+    color: var(--neon-pink);
+    margin-bottom: 0;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    60%, 100% {
+        width: 15ch;
+    }
+}
+
+.terminal__typing {
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 15ch;
+    animation-name: typing;
+    animation-duration: 3s;
+    animation-timing-function: steps(15);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+.terminal__cursor {
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.exhibits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    background-color: var(--block-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.6s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.card__image {
+    display: block;
+    height: 180px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+    border-radius: 6px;
+}
+
+.card__title {
+    color: var(--neon-cyan);
+    font-size: 18px;
+    min-height: 44px;
+    margin-bottom: 10px;
+}
+
+.card__text {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card__actions {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--block-background);
+    margin-top: 20px;
+    animation: fadeIn 0.6s ease;
+}
+
+.specs-table__head {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--table-header-background);
+    color: var(--neon-cyan);
+}
+
+.specs-table__row {
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.specs-table__row:hover {
+    background-color: var(--table-header-background);
+    color: var(--neon-cyan);
+}
+
+.specs-table__cell {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+}
+
+.specs-table__cell_left {
+    text-align: left;
+}
+
+.specs-table__cell_center {
+    text-align: center;
+}
+
+.specs-table__cell_right {
+    text-align: right;
+}
+
+.visit-form {
+    background-color: var(--block-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 20px;
+    animation: fadeIn 0.6s ease;
+}
+
+.visit-form__input {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: var(--main-background);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    margin: 0 auto 20px auto;
+}
+
+.visit-form__input::placeholder {
+    color: var(--white-color);
+}
+
+.visit-form__submit {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
